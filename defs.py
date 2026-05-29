@@ -46,7 +46,6 @@ def tabloyap():
     imlec.execute(""" CREATE TABLE IF NOT EXISTS musteribilgi(ID integer PRIMARY KEY,ad TEXT,tel TEXT,tc TEXT,sifre TEXT )""")
     imlec.execute(""" CREATE TABLE IF NOT EXISTS resepsiyonistbilgi(ID integer PRIMARY KEY,ad TEXT,tel TEXT,tc TEXT,sifre TEXT )""")
     imlec.execute(""" CREATE TABLE IF NOT EXISTS rezervasyonbilgi(tc TEXT,ad TEXT,tel TEXT,oda_tipi TEXT,kac_kisi TEXT,rezervasyon_tarih TEXT,rezervasyon_fiyat TEXT)""")
-    imlec.execute("""INSERT INTO resepsiyonistbilgi(ad,tel,tc,sifre) VALUES('ensar','500505000','11122233344','123')""")
     vt.commit()
     vt.close()
 
@@ -152,7 +151,7 @@ def listele(ad,tel,tc):
     return liste 
 
 """3.kısım"""
-"""doktor"""
+"""resepsiyonist"""
 def resepsiyonistsilmeara(tc,ad,tarih):
     vt=sql.connect("veritabani.db")
     imlec=vt.cursor()
